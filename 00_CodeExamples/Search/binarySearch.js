@@ -1,7 +1,4 @@
-const utils = require("./utils");
-const array = utils.getArrayOf1_000_000_Sorted();
-
-function binarySearch(searchFor) {
+function binarySearch(searchFor, array) {
     let lowerBound = 0;
     let upperBound = array.length - 1;
     const firstOrLast = getFirstAndLast();

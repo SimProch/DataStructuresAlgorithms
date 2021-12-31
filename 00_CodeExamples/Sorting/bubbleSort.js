@@ -1,6 +1,3 @@
-const utils = require("../00_CodeExamples/utils");
-let array = utils.getArrayOf1_000_000_Randomized();
-let arrayCopy = [...array];
 
 /**
  * We compare all adjacent items and swap them if they are out of order
@@ -12,7 +9,7 @@ let arrayCopy = [...array];
  * 
  * Extremely slow - log(N^2). For 100 elements, this takes 5k steps.
  */
-function bubbleSort() {
+function bubbleSort(array) {
     let numberOfSorted = 0;
     let numberOfSteps = 0;
     let sorted = false;
@@ -35,11 +32,6 @@ function bubbleSort() {
     console.log(numberOfSteps)
 }
 
-console.time("JS sort")
-arrayCopy = array.slice(0, 100);
-arrayCopy.sort((x,y) => x - y);
-console.timeEnd("JS sort")
-console.time("Bubble Sort")
-array = array.slice(0, 10000); // make array smaller so it actually finishes
-bubbleSort();
-console.timeEnd("Bubble Sort")
+module.exports = {
+    bubbleSort
+}

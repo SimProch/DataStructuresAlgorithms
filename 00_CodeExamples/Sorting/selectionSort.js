@@ -1,8 +1,4 @@
 
-const utils = require("../00_CodeExamples/utils");
-let array = utils.getArrayOf1_000_000_Randomized();
-let arrayCopy = [...array];
-
 /**
  * We compare first item with all others.
  * We swap them if they are out of order
@@ -14,7 +10,7 @@ let arrayCopy = [...array];
  * 
  * Extremely slow - log(N^2). For 100 elements, this takes ~3.2k steps.
  */
-function selectionSort() {
+function selectionSort(array) {
     let numberOfSteps = 0;
     for (let i = 0; i < array.length; i++) {
         let lowestIndex = i;
@@ -32,11 +28,7 @@ function selectionSort() {
     console.log(numberOfSteps);
 }
 
-arrayCopy = array.slice(0, 100);
-console.time("JS sort")
-arrayCopy.sort((x,y) => x - y);
-console.timeEnd("JS sort")
-console.time("Selection Sort")
-array = array.slice(0, 10000); // make array smaller so it actually finishes
-selectionSort();
-console.timeEnd("Selection Sort")
+
+module.exports = {
+    selectionSort
+}
