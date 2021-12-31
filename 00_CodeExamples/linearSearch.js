@@ -1,5 +1,5 @@
 const utils = require("./utils");
-const array = utils.getArrayOf1_000_000();
+const array = utils.getArrayOf1_000_000_Sorted();
 
 function linearSearch(searchFor) {
     for (let i = 0; i < array.length; i++) {
