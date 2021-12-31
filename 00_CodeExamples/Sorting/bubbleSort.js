@@ -1,4 +1,3 @@
-
 /**
  * We compare all adjacent items and swap them if they are out of order
  * If they are not out of order, we keep it
