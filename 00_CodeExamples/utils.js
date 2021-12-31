@@ -4,6 +4,7 @@ function getArrayOf1_000_000_Sorted() {
 
 function getArrayOf1_000_000_Randomized() {
     return Array.from({ length: 1_000_000 }, () => Math.round(Math.random() * 1000000));
+    // return Array.from({ length: 1_000_000 }, (x,i) => 1000000 - i);
 }
 
 module.exports = {

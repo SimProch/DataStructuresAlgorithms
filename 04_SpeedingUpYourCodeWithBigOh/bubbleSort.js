@@ -24,6 +24,7 @@ function bubbleSort() {
             const previous = array[i];
             const next = array[i + 1];
             if (previous > next) {
+                numberOfSteps++;
                 array[i] = next;
                 array[i + 1] = previous;
                 sorted = false;
@@ -31,13 +32,14 @@ function bubbleSort() {
         }
         numberOfSorted++;
     }
+    console.log(numberOfSteps)
 }
 
 console.time("JS sort")
 arrayCopy = array.slice(0, 100);
-arrayCopy.sort();
+arrayCopy.sort((x,y) => x - y);
 console.timeEnd("JS sort")
 console.time("Bubble Sort")
-array = array.slice(0, 100); // make array smaller so it actually finishes
+array = array.slice(0, 10000); // make array smaller so it actually finishes
 bubbleSort();
 console.timeEnd("Bubble Sort")
