@@ -25,7 +25,7 @@ function selectionSort(array) {
             array[lowestIndex] = temp;
         }
     }
-    console.log(numberOfSteps);
+    console.log("Selection steps: " + numberOfSteps);
 }
 
 

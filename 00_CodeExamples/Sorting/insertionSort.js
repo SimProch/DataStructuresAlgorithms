@@ -1,6 +1,6 @@
 /**
  * We iterate over array and compare all elements to the left with current
- * If they are out of order, we move all elements to the right, effectively removing current element and creating gap
+ * If they are out of order, we move them to the right, effectively removing current element and creating gap
  * Then, to the gap, we insert the value of current iteration (temp value)
  * If they are not out of order, we keep it
  * We repeat this process until the array is sorted 
@@ -14,14 +14,15 @@ function insertionSort(array) {
         let position = i - 1;
         while (position >= 0) {
             numberOfSteps++;
-            if (array[position] > temp) { 
+            if (array[position] > temp) {
                 array[position + 1] = array[position];
-                position -= 1;
+                position--;
             } else break;
         }
+        numberOfSteps++;
         array[position + 1] = temp;
     }
-    console.log(numberOfSteps)
+    console.log("Insertion steps: " + numberOfSteps)
 }
 
 module.exports = {

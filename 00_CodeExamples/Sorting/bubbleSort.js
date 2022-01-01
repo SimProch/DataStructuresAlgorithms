@@ -28,7 +28,7 @@ function bubbleSort(array) {
         }
         numberOfSorted++;
     }
-    console.log(numberOfSteps)
+    console.log("Bubble steps: " + numberOfSteps)
 }
 
 module.exports = {
