@@ -20,3 +20,5 @@
   - Array will have faster insertion
 
 From the outside, it may look that Array should always be chosen as it is faster than Set in inserting and everything else is identical. However, here lies the decision - Is it more important for our code to have no duplicates, or faster insertion? We need to choose wisely.
+
+# Exercises start on page 19, solutions available on page 439

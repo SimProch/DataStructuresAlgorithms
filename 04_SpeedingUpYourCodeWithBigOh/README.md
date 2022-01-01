@@ -9,3 +9,6 @@
 - We can update this array to a sorted array by first sorting it.
 - We can achieve better speeds by updating conditions (unsorted -> sorted)
 - We can then use a better algorithm
+- Bubble sort was done as part of this chapter
+
+# Exercises start on page 60, solutions available on page 441

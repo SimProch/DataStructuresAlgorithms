@@ -14,3 +14,5 @@
 
 ## Additional Sources
 - [FreeCodeCamp](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/)
+
+# Exercises start on page 45, solutions available on page 440

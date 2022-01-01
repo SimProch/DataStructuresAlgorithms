@@ -33,3 +33,6 @@ for (let i = 0; i < 1_000_000; i++) {
   - Wisely choosing data structure (Allows for better algorithms for specific problems)
   - Wisely choosing algorithm (Allows for better Big Oh classification)
   - Performing only necessary steps (Reducing number of steps yet retaining Big Oh notation)
+- Selection sort was done as part of this chapter
+
+# Exercises start on page 76, solutions available on page 442

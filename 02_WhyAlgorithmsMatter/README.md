@@ -28,3 +28,4 @@
 - Choosing the correct algorithm is not enough - While we can use binary search on array, we only can use it if we choose the correct data structure (sorted array)
 - Both Data Structures and Algorithms are extremely important
 
+# Exercises start on page 34, solutions available on page 440
