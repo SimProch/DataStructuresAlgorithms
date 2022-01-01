@@ -23,7 +23,7 @@ function three() {
 /**
  * Big Oh for finding X in string
  */
-function four(array) {
+function four() {
     console.log("O(N) (Early break if foundX is true)")
 }
 

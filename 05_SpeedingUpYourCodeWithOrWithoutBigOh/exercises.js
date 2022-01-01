@@ -22,7 +22,7 @@ function three() {
 /**
  * Big Oh for 1 loop with 3 operations over N elements
  */
-function four(array) {
+function four() {
     console.log("O(N)")
 }
 
