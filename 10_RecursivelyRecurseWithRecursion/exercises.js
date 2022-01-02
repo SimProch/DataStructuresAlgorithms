@@ -1,37 +1,37 @@
 /**
- * Placing on hold in call center
+ * Base case of a function
  */
 function one() {
-    console.log("queue")
+    console.log("When first arg is bigger than second")
 }
 
 /**
- * Pushed to stack [1,2,3,4,5,6] and popped 2 items, what will be read next
+ * Factorial recursion with n - 2
  */
 function two() {
-    console.log("4")
+    console.log("Stack overflow - never hits base case")
 }
 
 /**
- * Inserted numbers [1,2,3,4,5,6] to queue and dequeued two, what will be read next
+ * Add base case
  */
 function three() {
-    console.log("3")
+    console.log("if (low === high) return 0")
 }
 
 /**
- * Stack function for reversing a string
+ * Function that prints all numbers in nested array
  */
-const Stack = require("../00_CodeExamples/StacksAndQueues/Stack").Stack;
-function four(str) {
-    const stack = new Stack();
-    for (let i = 0; i < str.length; i++) stack.push(str[i]);
-    let reversed = "";
-    while (stack.read()) reversed += stack.pop();
-    console.log(reversed);
+function four(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) four(arr[i])
+        else console.log(arr[i])
+    }
 }
 
 one();
 two();
 three();
-four("abcde");
+four([
+    1,2,3,[4,5,6],7,8,9,[10,[11,[12],13,[14,15]],16]
+]);
