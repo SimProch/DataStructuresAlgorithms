@@ -1,0 +1,21 @@
+{
+  "name": "@simproch/00_datastructures_algorithms",
+  "version": "1.0.0",
+  "description": "My takeaways from A Common-Sense Guide to Data Structures and Algorithms book",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimProch/DataStructuresAlgorithms.git"
+  },
+  "author": "SimProch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimProch/DataStructuresAlgorithms/issues"
+  },
+  "homepage": "https://github.com/SimProch/DataStructuresAlgorithms#readme",
+  "devDependencies": {
+    "jasmine": "^4.0.1"
+  }
+}
