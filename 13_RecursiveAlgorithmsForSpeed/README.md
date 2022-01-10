@@ -23,6 +23,18 @@
   - The array is not halved, rather we perform (N + N - 1 + N - 2 + N - 3 + ... + 1) steps (due to partitions being extremely uneven)
 
 ### QuickSelect
+- Used to select nth element based on some condition from an array
+- The implementation here shows how to select nth lowest element in an unsorted array
+- The complexity is O(2N) -> O(N)
+- Note that this is not searching, but selecting
+  - Searching is based on some condition
+  - Selection searches for nth element
+  - See more on [SO](https://stackoverflow.com/questions/10863093/difference-between-quickselect-binary-search-selection)
 
+### Why
+Though sorting is part of most programming languages nowadays (and O(N log N) seems to be the fastest speed available),
+it doesn't mean we shouldn't rlearn them. There are more similar algorithms, such as mergeSort.  
+  
+Furthermore, presorting array allows us to do faster operations. For example, checking for duplicate values would have to be something like O(N^2) due to nested search. However, if we sort the array first, we can compare just adjacent numbers and end up with O(N) (or rather N log N, due to sorting).
 
-# Exercises start on page 197, solutions available on page 450
+# Exercises start on page 224, solutions available on page 451

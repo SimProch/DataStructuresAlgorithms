@@ -1,37 +1,65 @@
+const quickSelect = require("./QuickSelect/quickselect").quickSelect;
 /**
- * Function accepts array of numbers and returns the sum. If a sum is higher than 100, it is discarded
- * Some parts are unnecessary
+ * Array of positive numbers.
+ * Write a function to find the greatest product of any three numbers
+ * Use sorting to make it O(N log N)
  */
-function one() {
-    console.log("Calling thrice `add_until_100` with same arguments. It can be moved above to a single call");
+function one(arr) {
+    arr.sort((x, y) => x - y);
+    const highestProductOfThree = arr[arr.length - 1] * arr[arr.length - 2] * arr[arr.length - 3];
+    console.log(highestProductOfThree)
+    return highestProductOfThree
 }
 
 /**
- * Function calculates Nth of Golomb sequence. It is inefficient. Use memoization.
+ * Function that attempts to find missing number in an array of integers
+ * Original function is O(N^2)
+ * Improve to O(log N)
  */
-function two(n, dict = {}) {
-    // Original
-    // if (n === 1) return n;
-    // return 1 + two(n - two(two(n - 1)));
-    if (n === 1) return n;
-    if (!dict[n]) dict[n] = 1 + two(n - two(two(n - 1, dict), dict), dict);
-    return dict[n];
+function two(arr) {
+    // original
+    // for (let i = 0; i < array.length; i++) {
+    //     if (!array.includes(i)) return i;
+    // }
+    // return null
+    arr.sort((x, y) => x - y);
+    for (let i = 0; i < arr.length; i++) {
+        if (i !== arr[i]) return i;
+    }
+    return null;
 }
 
 /**
- * Solution to unique paths. Use memoization to improve efficiency
+ * Write three different implementations of finding greatest number in an array
  */
-function three(rows, cols, dict = {}) {
-    // Original
-    // if (rows == 1 || cols == 1 ) return 1;
-    // return three(rows - 1, cols) + three(rows, cols - 1);
-    if (rows == 1 || cols == 1 ) return 1;
-    if (!dict[rows + cols]) dict[rows + cols] = three(rows - 1, cols) + three(rows, cols - 1);
-    return dict[rows + cols];
+function three(arr) {
+    const firstArr = [...arr];
+    let first;
+    for (let i = 0; i < firstArr.length; i++) {
+        let isFirstGreatest = true;
+        for (let j = 0; j < firstArr.length; j++) {
+            if (firstArr[j] > firstArr[i]) isFirstGreatest = false;
+        }
+        if (isFirstGreatest) {
+            first = firstArr[i];
+            break;
+        }
+    }
 
+    // O(N log N) - sort using quicksort
+    const secondArr = [...arr].sort((x, y) => x - y);
+    console.log(secondArr);
+    const second = secondArr[secondArr.length - 1];
+
+    // O(N) - quickselect or Math.max
+    const thirdArr = [...arr];
+    const third = quickSelect(thirdArr, thirdArr.length - 1, 0, thirdArr.length - 1);
+
+    return { first, second, third };
 }
 
 
-one();
-console.log(two(1000));
-console.log(three(5, 5));
+one([2, 3, 7, 8, 1, 11, 20, 100, 100]);
+console.log(two([0, 1, 3, 4]));
+console.log(two([0, 1, 2, 3, 4]));
+console.log(three([10, 2, 4, 1, 3, 5, 6, 8, 7, 9]));
