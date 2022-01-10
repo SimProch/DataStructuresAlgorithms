@@ -6,6 +6,11 @@
  * We do not create another array to iterate over
  * We only work with pointers so that next iteration end earlier/start later
  * 
+ * Note that this function is not the same as in 13_RecursiveAlgorithmsForSpeed. There are some optimization for this function.
+ * Specifically, the recursion is wrapped inside an if using tail call optimization
+ * If it weren't for this, bigger arrays would throw maximum stack trace error.
+ * See https://stackoverflow.com/questions/310974/what-is-tail-call-optimization
+ * 
  * @param {array} array is the array to sort
  * @param {number} leftPointer is the left comparing element position
  * @param {number} rightPointer is the right comparing element position
