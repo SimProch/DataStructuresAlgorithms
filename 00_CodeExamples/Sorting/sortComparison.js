@@ -2,6 +2,7 @@ const utils = require("../utils");
 const selectionSort = require("./selectionSort");
 const bubbleSort = require("./bubbleSort");
 const insertionSort = require("./insertionSort");
+const quickSort = require("./quickSort");
 const sortedArray = utils.getArrayOf1_000_000_Sorted();
 const randomizedArray = utils.getArrayOf1_000_000_Randomized();
 const reversedArray = utils.getArrayOf1_000_000_Reversed();
@@ -16,9 +17,10 @@ function performSort(array, type) {
     const bubbleSortCopy = array.slice(0, 10000);
     const selectionSortCopy = array.slice(0, 10000);
     const insertionSortCopy = array.slice(0, 10000);
+    const quickSortCopy = array.slice(0, 10000);
 
-console.log("");
-console.log(type);
+    console.log("");
+    console.log(type);
     console.time(`JS sort ${type}`)
     arrayCopy.sort((x, y) => x - y);
     console.timeEnd(`JS sort ${type}`)
@@ -35,4 +37,8 @@ console.log(type);
     console.time(`Insertion Sort ${type}`)
     insertionSort.insertionSort(insertionSortCopy);
     console.timeEnd(`Insertion Sort ${type}`)
+
+    console.time(`Quick Sort ${type}`)
+    quickSort.quickSort(quickSortCopy);
+    console.timeEnd(`Quick Sort ${type}`)
 }

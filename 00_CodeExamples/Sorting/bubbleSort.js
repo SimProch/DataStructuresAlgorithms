@@ -10,17 +10,14 @@
  */
 function bubbleSort(array) {
     let numberOfSorted = 0;
-    let numberOfSteps = 0;
     let sorted = false;
     while (!sorted) {
         const unsortedUntil = array.length - numberOfSorted
         sorted = true;
         for (let i = 0; i < unsortedUntil; i++) {
-            numberOfSteps++;
             const previous = array[i];
             const next = array[i + 1];
             if (previous > next) {
-                numberOfSteps++;
                 array[i] = next;
                 array[i + 1] = previous;
                 sorted = false;
@@ -28,7 +25,6 @@ function bubbleSort(array) {
         }
         numberOfSorted++;
     }
-    console.log("Bubble steps: " + numberOfSteps)
 }
 
 module.exports = {

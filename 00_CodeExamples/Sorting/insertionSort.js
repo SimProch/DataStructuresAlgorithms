@@ -8,21 +8,17 @@
  * Extremely slow - log(N^2). For 100 elements, this takes 5k steps.
  */
 function insertionSort(array) {
-    let numberOfSteps = 0;
     for (let i = 1; i < array.length; i++) {
         const temp = array[i];
         let position = i - 1;
         while (position >= 0) {
-            numberOfSteps++;
             if (array[position] > temp) {
                 array[position + 1] = array[position];
                 position--;
             } else break;
         }
-        numberOfSteps++;
         array[position + 1] = temp;
     }
-    console.log("Insertion steps: " + numberOfSteps)
 }
 
 module.exports = {

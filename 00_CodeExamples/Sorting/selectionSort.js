@@ -11,21 +11,17 @@
  * Extremely slow - log(N^2). For 100 elements, this takes ~3.2k steps.
  */
 function selectionSort(array) {
-    let numberOfSteps = 0;
     for (let i = 0; i < array.length; i++) {
         let lowestIndex = i;
         for (let j = i + 1; j < array.length; j++) {
-            numberOfSteps++
             if (array[lowestIndex] > array[j]) lowestIndex = j;
         }
         if (lowestIndex !== i) {
-            numberOfSteps++
             const temp = array[i];
             array[i] = array[lowestIndex];
             array[lowestIndex] = temp;
         }
     }
-    console.log("Selection steps: " + numberOfSteps);
 }
 
 
