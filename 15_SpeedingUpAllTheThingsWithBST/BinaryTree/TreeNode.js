@@ -47,7 +47,8 @@ class TreeNode {
     /**
      * The lift function is used to find successor node, and replace the path to successor node.
      * This function overwrites the value of parent with current node, if it is the one lifted.
-     * Note that the successor object is not copied - only its value is transfered
+     * Note that the successor object is not copied - only its value is transfered to the original parent -
+     * The reference to the parent is passed all the way to successor node.
      * All other nodes must be 'moved' in order to keep relationship between nodes
      * This function is called always on the right node of the deleted node (see `delete` function).
      * Because of that, 
@@ -60,10 +61,15 @@ class TreeNode {
         parentNodeToDelete.value = this.value;
         return this.rightChild;
     }
+
+    traverse() {
+        this.leftChild?.traverse();
+        console.log(this.value);
+        this.rightChild?.traverse();
+    }
 }
 
 const root = new TreeNode(50);
 const values = [25, 75, 10, 33, 56, 89, 4, 11, 30, 40, 52, 61, 82, 95]
 values.forEach(i => root.insert(i));
-console.log(root);
-root.delete(50)
+root.traverse();
