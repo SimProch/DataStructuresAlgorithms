@@ -62,6 +62,20 @@ class TreeNode {
         return this.rightChild;
     }
 
+    /**
+     * The traverse function moves through the tree
+     * Every node has a traverse function.
+     * To do this in a sorted way, we traverse to the left side first, then print value, then traverse to the right
+     * The reason is as follows:
+     * - Node 20
+     *  - Node 10 (left)
+     *  - Node 30 (right)
+     * First, we move to node 10 (left node - lowest). Then it's value is printed.
+     * Then, the value of parent is printed (parent - middle value) 
+     * Lastly, we move to node 30 (right node - highest), whose value is printed as well
+     * This way, we can traverse the entire tree in a sorted manner
+     * This is called `inorder traversal`.
+     */
     traverse() {
         this.leftChild?.traverse();
         console.log(this.value);

@@ -45,11 +45,15 @@
     - A successor node is a child node whose value is the least of all values that are greater than the node (see img)
     - To find successor node, go to the right child once and then to deepest left child
   - If the successor node has a right child, after perfoming the replacement, take the former right child and turn it into left child of the successor node's parent
+  ![Predecessors and successors](./predecessor-and-successor-of-a-bst.jpg)
 
-![Predecessors and successors](./predecessor-and-successor-of-a-bst.jpg)
-    
-    
-## Summary
+- Traversal
+  - Multiple approaches
+  - Inorder traversal is done as part of this chapter to move through the tree. The steps are:
+    - Visit left child
+    - Visit current node (parent)
+    - Visit right child
+    - This way, we can move 'in order' - in the way how binary tree is sorted.
+  - ![Binary tree traversal](./binary-tree-traversal.jpg)
 
-
-# Exercises start on page 245, solutions available on page 453
+# Exercises start on page 276, solutions available on page 456
