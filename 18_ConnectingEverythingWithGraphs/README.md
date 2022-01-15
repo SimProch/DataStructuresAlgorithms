@@ -66,6 +66,29 @@
 - Weighted graphs has additional information about edges
 - For example, distance between different cities
 - It can also be directional graph (flight from city A to B is more expensive than vice versa)
+- In the example, we will be searching for path with cheapest price (see dijkstra.js in WeightedGraphs/Traversing)
+- It can also be used for another ways of pathfinding
+  - A 2D array in which we want to get lowest path from start to finish can be viewed as a graph
+  - The values in adjacent cells are edge values, and adjacent cells are vertices
+  - It is important to view graphs also in other data structures
 
+### Dijkstra's algorithm
+- Visit the starting vertex, making it `currentVertex`
+- Check the weights from the current vertex to adjacent vertices
+- If the price is lesser than the one in a hash table or does not exist
+  - We update the hash table to reflect lesser values
+  - We update previous stops hash table with adjacent vertex key and current's vertex value
+- Move to next unvisited vertex which ahs the lesser price
+- Repeat previous steps until everything is visited
+- Complexity in this example is O(V^2)
+
+### Additional Graph Algorithms
+- Topological sort, bidirectional search, Floyd-Warshall algorithm, Bellman-Ford algorithm, graph coloring, minimum spanning tree
+
+# Summary
+- BFS/DFS for unweighted graphs
+- Dijkstra for weighted
+- Requires additional review
+- Apply to AoC2021
 
 # Exercises start on page 384, solutions available on page 561
