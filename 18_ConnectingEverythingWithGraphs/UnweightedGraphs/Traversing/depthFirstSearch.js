@@ -1,4 +1,4 @@
-const UndirectedVertex = require("./Vertex").UndirectedVertex;
+const UndirectedVertex = require("../Vertex").UndirectedVertex;
 
 const alice = new UndirectedVertex("Alice");
 const candy = new UndirectedVertex("Candy");
@@ -21,18 +21,22 @@ derek.addAdjacentVertex(elaine);
 derek.addAdjacentVertex(gina);
 gina.addAdjacentVertex(irena);
 
-function depthFirstSearch(current, searchValue, path = {}) {
+/**
+ * DFS find the vertex using recursion
+ * It calls itself on other nodes until we've found the node we search for
+ */
+function depthFirstSearch(current, searchValue, visited = {}) {
     if (current.value === searchValue) return current;
-    path[current.value] = true;
+    visited[current.value] = true;
     for (let i = 0; i < current.adjacentVertices.length; i++) {
         const adjacentVertex = current.adjacentVertices[i];
-        if (path[adjacentVertex.value]) continue;
+        if (visited[adjacentVertex.value]) continue;
         if (adjacentVertex.value === searchValue) return adjacentVertex;
-        const foundVertex = depthFirstSearch(adjacentVertex, searchValue, path);
+        const foundVertex = depthFirstSearch(adjacentVertex, searchValue, visited);
         if (foundVertex) return foundVertex;
     }
     return null;
 }
 
-const vertex = depthFirstSearch(alice, "Bob")
+const vertex = depthFirstSearch(alice, "Irena")
 console.log(vertex);
