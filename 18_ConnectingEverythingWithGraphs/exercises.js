@@ -2,6 +2,6 @@
     // tag, tan, tank, tap
     // today, total
     // we, well, went
-// second wants us to draw a trie manually.See second.png. I also forgot to add hill. Others are fine.
+// second wants us to draw a trie manually.See second.png
 // third wants us to write a function that prints each key in a trie. See TrieNode.js:60
 // fourth wants us to write a function that autocorrects to closest word. See TrieNode.js:69
