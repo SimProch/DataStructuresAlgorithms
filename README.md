@@ -40,6 +40,7 @@ This repository serves for code examples and notes from book [A Common-Sense Gui
   - That might get better
 - Quicksort is not O(log N) in space and throws error on own examples, I've implemented tail call recursion myself
 - Queues could use a better example - printers is very basic example, but it was hard to find any other until I've found myself doing BFS
+- I understand that this book deals with algorithms, but most of them are in place changes. The clean coder in me hates the idea of debugging such code. I think it'd be a nice idea to at least mention it, since tradeoffs are mentioned only as time vs space constraints, but don't consider anything else. This might be intentional though as to not introduce any more concepts.
 
 ## To be done as a result of reading this book
 - Implement own queue using doubly linked list, rather than currently implemented array
