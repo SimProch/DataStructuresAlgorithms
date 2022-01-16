@@ -47,4 +47,9 @@ return false
   - Group sorting
     - ['a', 'b', 'a', 'a', 'b', 'c', 'c'] -> ['a', 'a', 'a', 'b', 'b', 'c', 'c']
     - Same as previously - use hash table to keep count, rather than sort. Sort is O(N log N), hash table is O(N)
+- Basically, it's:
+  - Use a different data structure
+  - Use a better algorithm
+  - Think out of the box, find patterns
+
 # Exercises start on page 395, solutions available on page 464
